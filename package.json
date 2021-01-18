@@ -1,6 +1,6 @@
 {
   "name": "tyvn",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "./dist/index.js",
   "scripts": {
@@ -67,5 +67,8 @@
     "dist/**/**/*"
   ],
   "typings": "./dist/index.d.ts",
-  "repository": "Milo123459/tyvn"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Milo123459/tyvn.git"
+  }
 }
