@@ -1,12 +1,12 @@
 {
   "name": "tyvn",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "test": "ts-node-dev --respawn --transpile-only --poll ./src/index.ts",
+    "test": "ts-node-dev --respawn --transpile-only --poll ./src/test.ts",
     "lint": "prettier --write .",
-    "build": "tsc"
+    "build": "tsc --diagnostics"
   },
   "keywords": [],
   "author": "",
@@ -63,7 +63,9 @@
     }
   },
   "files": [
-      "src/**/**/*",
-      "dist/**/**/*"
-  ]
+    "src/**/**/*",
+    "dist/**/**/*"
+  ],
+  "typings": "./dist/index.d.ts",
+  "repository": "Milo123459/tyvn"
 }
