@@ -14,7 +14,7 @@ import { arrayIfy, limitArray } from 'tyvn';
 const data: Set<string> = new Set();
 data.add('hello');
 data.add('world');
-console.log(arrayIfy<Set, string>(data)); // ['hello', 'world'];
+console.log(arrayIfy<Set<string>, string>(data)); // ['hello', 'world'];
 // limitArray (known as chunk)
 console.log(limitArray<string>(arrayIfy<Set<string>, string>(data), 1)); // [ [ 'hello' ], [ 'world' ] ]
 ```
