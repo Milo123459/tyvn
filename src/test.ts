@@ -1,4 +1,4 @@
-import { arrayIfy, limitArray, addProp, limitArrayify } from '.';
+import { arrayIfy, limitArray, addProp, limitArrayify, filterMap } from '.';
 const data: Set<string> = new Set();
 data.add('hello');
 data.add('world');
@@ -15,5 +15,15 @@ console.log(
 			two: 3,
 		},
 		{ one: 9, two: 12 }
+	)
+);
+console.log(
+	filterMap<string, string>(
+		['a', 'th', 'is', 'wi', 'll', 'display'],
+		(accept, deny, value) => {
+			if (value.length == 2) {
+				return accept(value);
+			} else return deny();
+		}
 	)
 );

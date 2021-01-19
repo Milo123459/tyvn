@@ -9,14 +9,12 @@ Object functions.
  * @param startValue The base value.
  * @param inputs Objects that'll be inputted. It is a sweeper functions so you can add in however much you'd like.
  * @example
- * ```typescript
  * import { addProp } from 'tyvn';
  *
  * addProp<{ one: number, two: number }>(['one', 'two'], 5, { one: 1, two: 2 }); // 3
  * addProp<{ one: number, two: number }>('one', 5, { one: 1, two: 2 }); // 1
  * addProp<{ one: number, two: number }>(['one', 'two'], 5, { one: 1, two: 'Hello world!' }); // 6
  * addProp<{ one: number; two: number }>(['one', 'two'], 5, 0, { one: 6, two: 3 }, { one: 9, two: 12 }); // 30
- * ```
  */
 const addProp = <T>(
 	prop: string | string[],

@@ -10,7 +10,7 @@
 # Array Functions
 
 ```ts
-import { arrayIfy, limitArray, limitArrayify } from 'tyvn';
+import { arrayIfy, limitArray, limitArrayify, filterMap } from 'tyvn';
 
 // arrayIfy:
 const data: Set<string> = new Set();
@@ -21,6 +21,15 @@ console.log(arrayIfy<Set<string>, string>(data)); // ['hello', 'world'];
 console.log(limitArray<string>(arrayIfy<Set<string>, string>(data), 1)); // [ [ 'hello' ], [ 'world' ] ]
 // limitArrayify (convenience functions combining limitArray and arrayIfy)
 console.log(limitArrayify<Set<string>, string>(data, 1)); // [ ['hello'], ['world'] ]
+// filterMap
+filterMap<string, string>(
+	['a', 'th', 'is', 'wi', 'll', 'display'],
+	(accept, deny, value) => {
+		if (value.length == 2) {
+			return accept(value);
+		} else return deny();
+	}
+); // ['th', 'is', 'wi', 'll'];
 ```
 
 More info:
@@ -46,6 +55,11 @@ More info:
 - - - R: Type that the array should expect to return.
 - - input: T: Something inputted. Must have same type as T.
 - - length: number: What the max length of each sub array is.
+- filterMap
+- - - T: Type of the array that'll be inputted.
+- - - R: The type you want the return array to be.
+- - arr: Array&lt;T&gt; The input array. Must be the same type as T
+- - filter: FilterFn&lt;T,R&gt;: The filter function. Looks like so: `(accept, deny, value, index, array)`
   </details>
 
 # Object Functions
