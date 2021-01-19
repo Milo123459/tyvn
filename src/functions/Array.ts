@@ -36,5 +36,21 @@ const limitArray = <R>(arr: Array<R>, length: number): Array<Array<R>> => {
 	for (let i = 0; i < arr.length; i += length) R.push(arr.slice(i, i + length));
 	return R;
 };
+/**
+ * @description A convenience functions. Combines arrayIfy and limitArray
+ * @param input The array of input. Has to be either a readonly version or a instanceof T.
+ * @param length The max length of each sub array
+ * ```typescript
+ * const data: Set<string> = new Set();
+ * data.add('hello');
+ * data.add('world');
+ * limitArrayify<Set<string>, string>(data, 1); // [['hello'], ['world']]
+ */
+const limitArrayify = <T, R>(
+	input: T | Readonly<T>,
+	length: number
+): Array<Array<R>> => {
+	return limitArray<R>(arrayIfy<T, R>(input), length);
+};
 
-export { arrayIfy, limitArray };
+export { arrayIfy, limitArray, limitArrayify };

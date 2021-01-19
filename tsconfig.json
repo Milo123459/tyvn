@@ -1,4 +1,3 @@
-
 {
 	"compilerOptions": {
 		"lib": ["ESNext"],
@@ -13,8 +12,8 @@
 		"allowSyntheticDefaultImports": true,
 		"skipLibCheck": true,
 		"skipDefaultLibCheck": true,
-        "resolveJsonModule": true,
-        "declaration": true
+		"resolveJsonModule": true,
+		"declaration": true
 	},
 	"include": ["src"],
 	"exclude": ["node_modules", "**/*.spec.ts"]
