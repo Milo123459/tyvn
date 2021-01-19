@@ -7,7 +7,7 @@
     "test": "ts-node-dev --respawn --transpile-only --poll ./src/test.ts",
     "lint": "prettier --write .",
     "build": "del-cli ./dist && tsc --diagnostics",
-    "prepublish": "yarn build"
+    "prepublish": "yarn build && yarn lint"
   },
   "keywords": [],
   "author": "",
