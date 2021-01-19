@@ -5,8 +5,14 @@ data.add('world');
 console.log(arrayIfy<Set<string>, string>(data));
 console.log(limitArray<string>(arrayIfy<Set<string>, string>(data), 1));
 console.log(
-	addProp<{ one: number; two: number }>(['one', 'two'], 5, 0, {
-		one: 69,
-		two: 3,
-	})
+	addProp<{ one: number; two: number }>(
+		['one', 'two'],
+		5,
+		0,
+		{
+			one: 6,
+			two: 3,
+		},
+		{ one: 9, two: 12 }
+	)
 );

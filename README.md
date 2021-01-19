@@ -46,6 +46,7 @@ import { addProp } from 'tyvn';
 addProp<{ one: number, two: number }>(['one', 'two'], 5, { one: 1, two: 2 }); // 3
 addProp<{ one: number, two: number }>('one', 5, { one: 1, two: 2 }); // 1
 addProp<{ one: number, two: number }>(['one', 'two'], 5, { one: 1, two: 'Hello world!' }); // 6 (you'll also be screamed as two should be a number!)
+addProp<{ one: number; two: number }>(['one', 'two'], 5, 0, { one: 6, two: 3 }, { one: 9, two: 12 }); // 30
 ```
 More info:
 
