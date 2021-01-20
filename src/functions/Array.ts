@@ -76,7 +76,7 @@ const limitArrayify = <T, R>(
  *  if(value.length == 2) {
  *      return accept(value);
  *  } else return deny();
- * })
+ * }) // ['th', 'is', 'wi', 'll']
  */
 const filterMap = <T, R>(arr: Array<T>, filter: FilterFn<T, R>): Array<R> => {
 	const res: Array<R> = [];
@@ -89,4 +89,15 @@ const filterMap = <T, R>(arr: Array<T>, filter: FilterFn<T, R>): Array<R> => {
 	return res;
 };
 
-export { arrayIfy, limitArray, limitArrayify, filterMap };
+/**
+ * @description Remove all elements from an array that are equal to the value supplied
+ * @param arr The array inputted. Must be an array of T
+ * @param value The value to remove. Must be the same typeof T
+ * @example
+ * removeAll<string>(['hello', 'world', 'hello'], 'hello'); // ['world'];
+ */
+const removeAll = <T>(arr: Array<T>, value: T): Array<T> => {
+	return arr.filter((val: T) => val != value);
+};
+
+export { arrayIfy, limitArray, limitArrayify, filterMap, removeAll };

@@ -1,4 +1,11 @@
-import { arrayIfy, limitArray, addProp, limitArrayify, filterMap } from '.';
+import {
+	arrayIfy,
+	limitArray,
+	addProp,
+	limitArrayify,
+	filterMap,
+	removeAll,
+} from '.';
 const data: Set<string> = new Set();
 data.add('hello');
 data.add('world');
@@ -27,3 +34,4 @@ console.log(
 		}
 	)
 );
+console.log(removeAll<string>(['hello', 'world', 'hello'], 'hello'));
