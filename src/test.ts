@@ -5,6 +5,8 @@ import {
 	limitArrayify,
 	filterMap,
 	removeAll,
+	takeUntil,
+	waitUntil,
 } from '.';
 const data: Set<string> = new Set();
 data.add('hello');
@@ -35,3 +37,15 @@ console.log(
 	)
 );
 console.log(removeAll<string>(['hello', 'world', 'hello'], 'hello'));
+console.log(
+	takeUntil<string>(
+		['hello', 'world', 'this', 'will', 'not', 'be', 'displayed'],
+		(value: string, index: number) => index < 2
+	)
+);
+console.log(
+	waitUntil<string>(
+		['hello', 'world', 'this', 'will', 'not', 'be', 'displayed'],
+		(value: string, index: number) => index > 2
+	)
+);

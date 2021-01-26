@@ -1,13 +1,13 @@
 {
 	"name": "tyvn",
-	"version": "1.4.0",
+	"version": "1.5.0",
 	"description": "A collection of typed functions for TypeScript.",
 	"main": "./dist/index.js",
 	"scripts": {
 		"test": "ts-node-dev --respawn --transpile-only --poll ./src/test.ts",
 		"lint": "prettier --write .",
 		"build": "del-cli ./dist && tsc --diagnostics",
-		"prepublish": "yarn build && yarn lint"
+		"prepublish": "yarn lint && yarn build"
 	},
 	"keywords": [],
 	"author": "",

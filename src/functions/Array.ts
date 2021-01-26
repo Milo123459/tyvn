@@ -20,6 +20,10 @@ export interface FilterFn<T, R> {
 	): void | FilterAccept<T> | FilterDeny;
 }
 
+export interface UntilFn<T> {
+	(value: T, index: number, array: Array<T>): boolean;
+}
+
 /**
  * @description Convert an object to an array. Can be an instance of a class or anything really.
  * @param input Input to arrayify
@@ -100,4 +104,52 @@ const removeAll = <T>(arr: Array<T>, value: T): Array<T> => {
 	return arr.filter((val: T) => val != value);
 };
 
-export { arrayIfy, limitArray, limitArrayify, filterMap, removeAll };
+/**
+ * @description Take elements from an array until a specified function returns false.
+ * @param arr The array inputted. Must be an array of T
+ * @param until The until function, same parameters that map returns. Must return a boolean.
+ * @example
+ * takeUntil<string>(['hello', 'world', 'this', 'will', 'not', 'be', 'displayed'], (value: string, index: number) => index < 2); // ['hello', 'world'];
+ */
+
+const takeUntil = <T>(arr: Array<T>, until: UntilFn<T>): Array<T> => {
+	let isTaking: boolean = true;
+	const res: Array<T> = [];
+	arr.map((value: T, index: number, array: T[]) => {
+		if (isTaking == false) return;
+		const response = until(value, index, array);
+		if (response == false) return (isTaking = false);
+		else return void res.push(value);
+	});
+	return res;
+};
+
+/**
+ * @description Take elements from an array until a specified function returns true.
+ * @param arr The array inputted. Must be an array of T
+ * @param until The until function, same parameters that map returns. Must return a boolean.
+ * @example
+ * waitUntil<string>(['hello', 'world', 'this', 'will', 'not', 'be', 'displayed'], (value: string, index: number) => index > 2); // ['hello', 'world', 'this'];
+ */
+
+const waitUntil = <T>(arr: Array<T>, until: UntilFn<T>): Array<T> => {
+	let isTaking: boolean = true;
+	const res: Array<T> = [];
+	arr.map((value: T, index: number, array: T[]) => {
+		if (isTaking == false) return;
+		const response = until(value, index, array);
+		if (response == true) return (isTaking = false);
+		else return void res.push(value);
+	});
+	return res;
+};
+
+export {
+	arrayIfy,
+	limitArray,
+	limitArrayify,
+	filterMap,
+	removeAll,
+	takeUntil,
+	waitUntil,
+};
