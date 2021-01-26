@@ -17,7 +17,7 @@ Object functions.
  * addProp<{ one: number; two: number }>(['one', 'two'], 5, 0, { one: 6, two: 3 }, { one: 9, two: 12 }); // 30
  */
 const addProp = <T>(
-	prop: string | string[],
+	prop: keyof T | Array<keyof T>,
 	defaultValue: number,
 	startValue: number,
 	...inputs: Array<T | Readonly<T>>
@@ -25,16 +25,16 @@ const addProp = <T>(
 	let res: number = startValue;
 	inputs.map((value) => {
 		if (prop instanceof Array) {
-			prop.map((value_: string) => {
+			prop.map((value_: keyof T) => {
 				if (value[value_] && typeof value[value_] == 'number') {
-					res += value[value_];
+					res += value[value_ as string];
 				} else {
 					res += defaultValue;
 				}
 			});
 		} else {
 			if (value[prop] && typeof value[prop] == 'number') {
-				res += value[prop];
+				res += value[prop as string];
 			} else {
 				res += defaultValue;
 			}
