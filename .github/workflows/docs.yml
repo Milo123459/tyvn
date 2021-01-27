@@ -11,8 +11,6 @@ jobs:
       matrix:
         node-version:
           - 14
-          - 12
-          - 10
     steps:
       - uses: actions/checkout@v2
         with:
@@ -20,7 +18,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: node -e 'console.log(require('fs').readdirSync('./'))'
+      - run: node -e 'console.log(require("fs").readdirSync("./"))'
       - run: yarn del-cli ./docs
       - run: yarn docs
       - run: |
