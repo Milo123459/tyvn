@@ -18,25 +18,15 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: yarn
       - run: yarn docs
-      - run: yarn del-cli ~/actions/temp
-      - uses: actions/cache@v2
-        with:
-          path: ./docs
-          key: ${{ runner.os }}-docs-cache          
-          restore-keys: |
-            ${{ runner.os }}-docs-cache
+      - run: yarn del-cli ~/actions/temp/docs
+      - run: mkdir -p ~/actions/temp/docs
+      - run: mv ./docs/* ~/actions/temp/docs
       - run: yarn del-cli ./docs
       - uses: actions/checkout@v2
         with:
           ref: docs
-      - uses: actions/cache@v2
-        with:
-          path: ./docs
-          key: ${{ runner.os }}-docs-cache
-          restore-keys: |
-            ${{ runner.os }}-docs-cache
-      - name: commit
-        run: |
+      - run: mv ~/actions/temp/docs/* ./docs
+      - run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add docs
