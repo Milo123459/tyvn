@@ -20,16 +20,22 @@ jobs:
       - run: yarn docs
       - uses: actions/cache@v2
         with:
+          id: docs-cache
           path: docs
-          key: ${{ runner.os }}-docs-cache
+          key: ${{ runner.os }}-docs-cache          
+          restore-keys: |
+            ${{ runner.os }}-docs-
       - run: yarn del-cli ./docs
       - uses: actions/checkout@v2
         with:
           ref: docs
       - uses: actions/cache@v2
         with:
+          id: docs-cache
           path: docs
           key: ${{ runner.os }}-docs-cache
+          restore-keys: |
+            ${{ runner.os }}-docs-
       - run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
