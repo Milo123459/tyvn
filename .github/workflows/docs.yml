@@ -20,7 +20,7 @@ jobs:
       - run: yarn docs
       - uses: actions/cache@v2
         with:
-          id: docs-cache
+          id: restore-keys
           path: docs
           key: ${{ runner.os }}-docs-cache          
           restore-keys: |
@@ -31,12 +31,13 @@ jobs:
           ref: docs
       - uses: actions/cache@v2
         with:
-          id: docs-cache
+          id: restore-keys
           path: docs
           key: ${{ runner.os }}-docs-cache
           restore-keys: |
             ${{ runner.os }}-docs-
-      - run: |
+      - name: commit
+        run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add docs
