@@ -109,7 +109,7 @@ More info:
 
 - addProp: Add properties togethor on objects inputted that will calculate a final sum. Supports default values.
 - - - T: Type of the inputs that will be inputted.
-- - prop: string | string[]: Properties to be accounted for when adding up the numbers
+- - prop: keyof&lt;T&gt; | Array&lt;keyof&lt;T&gt;&gt;: Properties to be accounted for when adding up the numbers
 - - defaultValue: number: The default value that'll be added to the result if either the value on one of the inputs is not a number / doesn't exist.
 - - startValue: number: The base value.
 - - ...inputs: Array&lt;T|Readonly&lt;T&gt;&gt; The inputs. It's a sweeper so as many as you'd like can be added. Note that it has to be relatable to T. Either Readonly or an instance of the interface provided.
