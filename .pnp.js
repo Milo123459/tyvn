@@ -44,10 +44,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["del-cli", "npm:3.0.1"],
             ["husky", "npm:4.3.8"],
             ["lint-staged", "npm:10.5.3"],
+            ["onigasm", "npm:2.2.5"],
             ["prettier", "npm:2.2.1"],
             ["ts-node", "virtual:3557e46d2f0cc003b75d3a7cff25192a69c2a63a2534c310b325a88919723e20dd97ec329f777dd7ad05da6d5e6e3ce2931dcfe7955238a6e73cbbb1bb80d0d7#npm:9.1.1"],
             ["ts-node-dev", "virtual:3557e46d2f0cc003b75d3a7cff25192a69c2a63a2534c310b325a88919723e20dd97ec329f777dd7ad05da6d5e6e3ce2931dcfe7955238a6e73cbbb1bb80d0d7#npm:1.1.1"],
             ["typedoc", "virtual:3557e46d2f0cc003b75d3a7cff25192a69c2a63a2534c310b325a88919723e20dd97ec329f777dd7ad05da6d5e6e3ce2931dcfe7955238a6e73cbbb1bb80d0d7#npm:0.20.19"],
+            ["typedoc-plugin-extras", "virtual:3557e46d2f0cc003b75d3a7cff25192a69c2a63a2534c310b325a88919723e20dd97ec329f777dd7ad05da6d5e6e3ce2931dcfe7955238a6e73cbbb1bb80d0d7#npm:1.1.7"],
             ["typescript", "patch:typescript@npm%3A4.1.3#builtin<compat/typescript>::version=4.1.3&hash=cc6730"]
           ],
           "linkType": "SOFT",
@@ -4069,6 +4071,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["typedoc-plugin-extras", [
+        ["npm:1.1.7", {
+          "packageLocation": "./.yarn/cache/typedoc-plugin-extras-npm-1.1.7-f6e4886bbd-b7c09f4920.zip/node_modules/typedoc-plugin-extras/",
+          "packageDependencies": [
+            ["typedoc-plugin-extras", "npm:1.1.7"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:3557e46d2f0cc003b75d3a7cff25192a69c2a63a2534c310b325a88919723e20dd97ec329f777dd7ad05da6d5e6e3ce2931dcfe7955238a6e73cbbb1bb80d0d7#npm:1.1.7", {
+          "packageLocation": "./.yarn/$$virtual/typedoc-plugin-extras-virtual-590ea8b32d/0/cache/typedoc-plugin-extras-npm-1.1.7-f6e4886bbd-b7c09f4920.zip/node_modules/typedoc-plugin-extras/",
+          "packageDependencies": [
+            ["typedoc-plugin-extras", "virtual:3557e46d2f0cc003b75d3a7cff25192a69c2a63a2534c310b325a88919723e20dd97ec329f777dd7ad05da6d5e6e3ce2931dcfe7955238a6e73cbbb1bb80d0d7#npm:1.1.7"],
+            ["@types/typedoc", null],
+            ["typedoc", "virtual:3557e46d2f0cc003b75d3a7cff25192a69c2a63a2534c310b325a88919723e20dd97ec329f777dd7ad05da6d5e6e3ce2931dcfe7955238a6e73cbbb1bb80d0d7#npm:0.20.19"]
+          ],
+          "packagePeers": [
+            "@types/typedoc",
+            "typedoc"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["typescript", [
         ["patch:typescript@npm%3A4.1.3#builtin<compat/typescript>::version=4.1.3&hash=cc6730", {
           "packageLocation": "./.yarn/cache/typescript-patch-7a9e6321b3-017af99214.zip/node_modules/typescript/",
@@ -4090,10 +4114,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["del-cli", "npm:3.0.1"],
             ["husky", "npm:4.3.8"],
             ["lint-staged", "npm:10.5.3"],
+            ["onigasm", "npm:2.2.5"],
             ["prettier", "npm:2.2.1"],
             ["ts-node", "virtual:3557e46d2f0cc003b75d3a7cff25192a69c2a63a2534c310b325a88919723e20dd97ec329f777dd7ad05da6d5e6e3ce2931dcfe7955238a6e73cbbb1bb80d0d7#npm:9.1.1"],
             ["ts-node-dev", "virtual:3557e46d2f0cc003b75d3a7cff25192a69c2a63a2534c310b325a88919723e20dd97ec329f777dd7ad05da6d5e6e3ce2931dcfe7955238a6e73cbbb1bb80d0d7#npm:1.1.1"],
             ["typedoc", "virtual:3557e46d2f0cc003b75d3a7cff25192a69c2a63a2534c310b325a88919723e20dd97ec329f777dd7ad05da6d5e6e3ce2931dcfe7955238a6e73cbbb1bb80d0d7#npm:0.20.19"],
+            ["typedoc-plugin-extras", "virtual:3557e46d2f0cc003b75d3a7cff25192a69c2a63a2534c310b325a88919723e20dd97ec329f777dd7ad05da6d5e6e3ce2931dcfe7955238a6e73cbbb1bb80d0d7#npm:1.1.7"],
             ["typescript", "patch:typescript@npm%3A4.1.3#builtin<compat/typescript>::version=4.1.3&hash=cc6730"]
           ],
           "linkType": "SOFT",

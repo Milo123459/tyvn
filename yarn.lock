@@ -3565,6 +3565,15 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"typedoc-plugin-extras@npm:^1.1.7":
+  version: 1.1.7
+  resolution: "typedoc-plugin-extras@npm:1.1.7"
+  peerDependencies:
+    typedoc: ">=0.16.0"
+  checksum: b7c09f4920ef0532b4c1407e89cbc34b285c56d3a47a25124952f56c6fdddbdfc5975ec6a63377a40432d6eb171ca8edd1235a7ef6fa4930e226f74be072e098
+  languageName: node
+  linkType: hard
+
 "typedoc@npm:^0.20.19":
   version: 0.20.19
   resolution: "typedoc@npm:0.20.19"
@@ -3619,10 +3628,12 @@ typescript@^4.1.3:
     del-cli: ^3.0.1
     husky: ^4.3.8
     lint-staged: ^10.5.3
+    onigasm: ^2.2.5
     prettier: ^2.2.1
     ts-node: ^9.1.1
     ts-node-dev: ^1.1.1
     typedoc: ^0.20.19
+    typedoc-plugin-extras: ^1.1.7
     typescript: ^4.1.3
   languageName: unknown
   linkType: soft
