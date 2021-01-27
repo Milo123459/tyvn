@@ -1,0 +1,29 @@
+name: Build docs
+on:
+  - release:
+  - workflow_dispatch:
+jobs:
+  docs:
+    name: Generate docs
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version:
+          - 14
+          - 12
+          - 10
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: git checkout docs
+      - run: yarn del-cli ./docs
+      - run: yarn docs
+      - run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add docs
+          git commit -m "generated docs"
+          git push
