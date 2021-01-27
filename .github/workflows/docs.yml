@@ -18,6 +18,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: yarn
       - run: yarn docs
+      - run: yarn del-cli ~/actions/temp
       - uses: actions/cache@v2
         with:
           path: ./docs
