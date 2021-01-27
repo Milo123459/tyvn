@@ -18,6 +18,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: yarn
       - run: yarn docs
+      - run: 'echo "tyvn.js.org" >> ./docs/CNAME'
       - run: yarn del-cli ~/actions/temp/docs
       - run: mkdir -p ~/actions/temp/docs
       - run: mv ./docs/* ~/actions/temp/docs
