@@ -16,12 +16,12 @@
 		"declaration": true
 	},
 	"include": ["src"],
-    "exclude": ["./src/**/*.spec.ts"],
-    "typedocOptions": {
-        "exclude": "./src/**/*.spec.ts",
-        "entryPoints": "./src/",
-        "out": "docs",
-        "theme": "minimal",
-        "includeVersion": true
-    }
+	"exclude": ["./src/**/*.spec.ts"],
+	"typedocOptions": {
+		"exclude": "./src/**/*.spec.ts",
+		"entryPoints": "./src/",
+		"out": "docs",
+		"theme": "minimal",
+		"includeVersion": true
+	}
 }
