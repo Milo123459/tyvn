@@ -1,6 +1,6 @@
 {
 	"name": "tyvn",
-	"version": "1.5.0",
+	"version": "1.6.0",
 	"description": "A collection of typed functions for TypeScript.",
 	"main": "./dist/index.js",
 	"scripts": {

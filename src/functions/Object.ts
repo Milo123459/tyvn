@@ -2,6 +2,8 @@
 Object functions.
 */
 
+import { keysWithType } from './Type';
+
 /**
  * @description Add multiple properties togethor to calculate a number. inputs is a sweeper.
  * @param prop The property that should be called on the object. Can be an array.
@@ -17,7 +19,7 @@ Object functions.
  * addProp<{ one: number; two: number }>(['one', 'two'], 5, 0, { one: 6, two: 3 }, { one: 9, two: 12 }); // 30
  */
 const addProp = <T>(
-	prop: keyof T | Array<keyof T>,
+	prop: keysWithType<T, number> | Array<keysWithType<T, number>>,
 	defaultValue: number,
 	startValue: number,
 	...inputs: Array<T | Readonly<T>>
