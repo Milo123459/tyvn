@@ -15,10 +15,11 @@ jobs:
           - 10
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: docs
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: git checkout docs
       - run: yarn del-cli ./docs
       - run: yarn docs
       - run: |
