@@ -27,6 +27,7 @@ jobs:
         with:
           ref: docs
       - run: rm -rf ./docs
+      - run: mkdir docs
       - run: mv ~/actions/temp/docs/* ./docs
       - run: |
           git config user.name github-actions
