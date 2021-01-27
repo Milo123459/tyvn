@@ -21,6 +21,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: yarn del-cli ./docs
+      - run: node -e 'console.log(process.cwd())'
       - run: yarn docs
       - run: |
           git config user.name github-actions
