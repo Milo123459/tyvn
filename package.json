@@ -8,7 +8,7 @@
 		"lint": "prettier --write .",
 		"build": "del-cli ./dist && tsc --diagnostics",
 		"prepublish": "yarn lint && yarn build",
-		"docs": "yarn typedoc --plugin typedoc-plugin-extras --noFavicon"
+		"docs": "yarn typedoc --plugin typedoc-plugin-extras --noFavicon --exclude ./src/functions/Type.ts --exclude ./src/index.ts --exclude './src/test.spec.ts'"
 	},
 	"keywords": [],
 	"author": "",
