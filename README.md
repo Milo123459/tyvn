@@ -1,5 +1,7 @@
 # tyvn
 
+[![npm](https://img.shields.io/npm/dt/tyvn.svg?style=for-the-badge)](https://npmjs.com/package/tyvn)
+
 ### A collection of TypeScript typed functions.
 
 **NOTE: The functions can be used in JavaScript but I do not recommend it.**
