@@ -10,7 +10,7 @@
 # Array Functions
 
 ```ts
-import { arrayIfy, limitArray, limitArrayify, filterMap. removeAll, takeUntil, waitUntil } from 'tyvn';
+import { arrayIfy, limitArray, limitArrayify, filterMap, removeAll, takeUntil, waitUntil } from 'tyvn';
 
 // arrayIfy:
 const data: Set<string> = new Set();
