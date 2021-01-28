@@ -34,7 +34,9 @@ export interface UntilFn<T> {
  * data.add('world');
  * arrayIfy<Set<string>, string>(data); // ['hello', 'world']
  */
-const arrayIfy = <T, R>(input: T | Readonly<T>): Array<R> => {
+const arrayIfy = <T extends Iterable<unknown>, R>(
+	input: T | Readonly<T>
+): Array<R> => {
 	if (!input) return [];
 	return [...(input as any)];
 };
@@ -64,7 +66,7 @@ const limitArray = <R>(arr: Array<R>, length: number): Array<Array<R>> => {
  * data.add('world');
  * limitArrayify<Set<string>, string>(data, 1); // [['hello'], ['world']]
  */
-const limitArrayify = <T, R>(
+const limitArrayify = <T extends Iterable<unknown>, R>(
 	input: T | Readonly<T>,
 	length: number
 ): Array<Array<R>> => {

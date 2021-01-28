@@ -10,7 +10,15 @@
 # Array Functions
 
 ```ts
-import { arrayIfy, limitArray, limitArrayify, filterMap, removeAll, takeUntil, waitUntil } from 'tyvn';
+import {
+	arrayIfy,
+	limitArray,
+	limitArrayify,
+	filterMap,
+	removeAll,
+	takeUntil,
+	waitUntil,
+} from 'tyvn';
 
 // arrayIfy:
 const data: Set<string> = new Set();
@@ -22,20 +30,32 @@ console.log(limitArray<string>(arrayIfy<Set<string>, string>(data), 1)); // [ [ 
 // limitArrayify (convenience functions combining limitArray and arrayIfy)
 console.log(limitArrayify<Set<string>, string>(data, 1)); // [ ['hello'], ['world'] ]
 // filterMap
-console.log(filterMap<string, string>(
-	['a', 'th', 'is', 'wi', 'll', 'display'],
-	(accept, deny, value) => {
-		if (value.length == 2) {
-			return accept(value);
-		} else return deny();
-	}
-)); // ['th', 'is', 'wi', 'll'];
+console.log(
+	filterMap<string, string>(
+		['a', 'th', 'is', 'wi', 'll', 'display'],
+		(accept, deny, value) => {
+			if (value.length == 2) {
+				return accept(value);
+			} else return deny();
+		}
+	)
+); // ['th', 'is', 'wi', 'll'];
 // removeAll
 console.log(removeAll<string>(['hello', 'world', 'hello'], 'hello')); // ['world'];
 // takeUntil
-console.log(takeUntil<string>(['hello', 'world', 'this', 'will', 'not', 'be', 'displayed'], (value: string, index: number) => index < 2)); // ['hello', 'world']
+console.log(
+	takeUntil<string>(
+		['hello', 'world', 'this', 'will', 'not', 'be', 'displayed'],
+		(value: string, index: number) => index < 2
+	)
+); // ['hello', 'world']
 // waitUntil
-console.log(waitUntil<string>(['hello', 'world', 'this', 'will', 'not', 'be', 'displayed'], (value: string, index: number) => index > 2)); // ['hello', 'world', 'this']
+console.log(
+	waitUntil<string>(
+		['hello', 'world', 'this', 'will', 'not', 'be', 'displayed'],
+		(value: string, index: number) => index > 2
+	)
+); // ['hello', 'world', 'this']
 ```
 
 More info:
