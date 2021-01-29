@@ -15,7 +15,7 @@ console.log(arrayIfy<Set<string>, string>(data));
 console.log(limitArray<string>(arrayIfy<Set<string>, string>(data), 1));
 console.log(limitArrayify<Set<string>, string>(data, 1));
 console.log(
-	addProp<{ one: number; two: number }>(
+	addProp<{ one: number; two?: number }>(
 		['one', 'two'],
 		5,
 		0,
@@ -23,7 +23,7 @@ console.log(
 			one: 6,
 			two: 3,
 		},
-		{ one: 9, two: 12 }
+		{ one: 9 }
 	)
 );
 console.log(

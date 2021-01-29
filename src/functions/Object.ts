@@ -28,14 +28,14 @@ const addProp = <T>(
 	inputs.map((value) => {
 		if (prop instanceof Array) {
 			prop.map((value_: keyof T) => {
-				if (value[value_] && typeof value[value_] == 'number') {
+				if (value && value != null && value[value_] && value[value_] != null) {
 					res += value[value_ as string];
 				} else {
 					res += defaultValue;
 				}
 			});
 		} else {
-			if (value[prop] && typeof value[prop] == 'number') {
+			if (value && value != null && value[prop] && value[prop] != null) {
 				res += value[prop as string];
 			} else {
 				res += defaultValue;
