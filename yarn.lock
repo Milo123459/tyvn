@@ -1750,9 +1750,9 @@ typedoc-default-themes@^0.12.10:
   version "0.12.10"
   resolved "https://registry.yarnpkg.com/typedoc-default-themes/-/typedoc-default-themes-0.12.10.tgz#614c4222fe642657f37693ea62cad4dafeddf843"
 
-typedoc-plugin-extras@^1.1.7:
-  version "1.1.7"
-  resolved "https://registry.yarnpkg.com/typedoc-plugin-extras/-/typedoc-plugin-extras-1.1.7.tgz#76c4f2b5f1f003581b7542e82d38a0526acb5631"
+typedoc-plugin-extras@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/typedoc-plugin-extras/-/typedoc-plugin-extras-2.0.0.tgz#fddf9e32bdd4e208a8ba92d98965099482aa84b3"
 
 typedoc@^0.20.23:
   version "0.20.36"
