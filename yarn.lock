@@ -188,8 +188,8 @@
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
 
 "@types/prettier@^2.2.0":
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-2.2.3.tgz#ef65165aea2924c9359205bf748865b8881753c0"
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-2.7.1.tgz#dfd20e2dc35f027cdd6c1908e80a5ddc7499670e"
 
 "@types/strip-bom@^3.0.0":
   version "3.0.0"
@@ -1306,8 +1306,8 @@ please-upgrade-node@^3.2.0:
     semver-compare "^1.0.0"
 
 prettier@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.2.1.tgz#795a1a78dd52f073da0cd42b21f9c91381923ff5"
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.0.tgz#c7df58393c9ba77d6fba3921ae01faf994fb9dc9"
 
 progress@^2.0.3:
   version "2.0.3"
